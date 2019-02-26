@@ -1,7 +1,9 @@
-$font-color-blue: #44bdff;
+$color-blue: #44bdff;
+$color-yellow: #fff963;
+$color-orange: #ff5300;
 
 body {
-  /* background-color: #fff963; // fff963ff */
+  /* background-color: $color-yellow; // fff963ff */
   margin: 0;
   padding: 0;
 
@@ -24,12 +26,12 @@ body {
 
   .main-hero {
     height: 35em;
-    background-image: radial-gradient(farthest-side at 8em 4em, #fff963 0%, #ff5300 100%);
+    background-image: radial-gradient(farthest-side at 8em 4em, $color-yellow 0%, $color-orange 100%);
     position: relative;
     overflow: hidden;
 
     h1, .tagline {
-      color: #44bdff;
+      color: $color-blue;
       font-family: 'Marck Script', cursive;
     }
 
@@ -64,7 +66,7 @@ body {
         left: 0;
         right: 0;
         margin: auto;
-        text-shadow: 0px 0px 1px #44bdff;
+        text-shadow: 0px 0px 1px $color-blue;
         opacity: 0;
 
 	      animation: blurFadeInOut 5s ease-in backwards;
@@ -83,27 +85,27 @@ body {
   }
 
   .hero-trailer {
-    background-color: #ff5300;
+    background-color: $color-orange;
   }
 }
 
 @keyframes blurFadeInOut {
 	0% {
 		opacity: 0;
-    color: #fff963;
-		/* text-shadow: 0px 0px 10px #fff963; */
+    color: $color-yellow;
+		/* text-shadow: 0px 0px 10px $color-yellow; */
 		transform: scale(2);
 	}
 	40%, 75% {
 		opacity: 1;
-    color: $font-color-blue;
-		text-shadow: 0px 0px 0px $font-color-blue;
+    color: $color-blue;
+		text-shadow: 0px 0px 0px $color-blue;
 		transform: scale(1);
 	}
 	100% {
 		opacity: 0;
-    color: #ff5300;
-		text-shadow: 0px 0px 10px #ff5300;
+    color: $color-orange;
+		text-shadow: 0px 0px 10px $color-orange;
 		transform: scale(0);
 	}
 }
@@ -111,14 +113,14 @@ body {
 @keyframes blurFadeIn {
 	0% {
 		opacity: 0;
-    color: #fff963;
-		text-shadow: 0px 0px 30px #fff963;
+    color: $color-yellow;
+		text-shadow: 0px 0px 30px $color-yellow;
 		transform: scale(1.8);
 	}
 	40%, 100% {
 		opacity: 1;
-    color: $font-color-blue;
-		text-shadow: 0px 0px 0.1px $font-color-blue;
+    color: $color-blue;
+		text-shadow: 0px 0px 0.1px $color-blue;
 		transform: scale(1);
 	}
 }
