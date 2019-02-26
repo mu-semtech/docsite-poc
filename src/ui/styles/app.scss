@@ -1,0 +1,124 @@
+$font-color-blue: #44bdff;
+
+body {
+  /* background-color: #fff963; // fff963ff */
+  margin: 0;
+  padding: 0;
+
+  background-color: #fafafa;
+}
+
+.hero-banner-top {
+  margin-top: 0;
+  filter: drop-shadow( 0 0 0.2em );
+  padding: 0;
+
+  & > * {
+    margin-top: 0;
+    max-width: 1280px;
+    width: 100%;
+    left: 0; right: 0; margin: auto;
+    padding: 0;
+    margin-top: 0; margin-bottom: 0;
+  }
+
+  .main-hero {
+    height: 35em;
+    background-image: radial-gradient(farthest-side at 8em 4em, #fff963 0%, #ff5300 100%);
+    position: relative;
+    overflow: hidden;
+
+    h1, .tagline {
+      color: #44bdff;
+      font-family: 'Marck Script', cursive;
+    }
+
+    h1 {
+      position: absolute;
+      display: flex;
+      font-size: 4.5em;
+      top: 0em;
+      left: 0; right: 0;
+
+      & > span:nth-child(1){
+        flex-grow: 20;
+      }
+      & > span:nth-child(2){
+        flex-grow: 0;
+      }
+      & > span:nth-child(3){
+        flex-grow: 80;
+      }
+    }
+
+    .tagline {
+      font-size: 3em;
+      top: 5em;
+      position: absolute;
+      width: 100%;
+
+      & > span {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-shadow: 0px 0px 1px #44bdff;
+        opacity: 0;
+
+	      animation: blurFadeInOut 5s ease-in backwards;
+      }
+
+      & > span:nth-child(11){
+	      animation: blurFadeIn 5s ease-in backwards;
+      }
+
+      @for $i from 0 through 10 {
+        & > span:nth-child(#{$i + 1}) {
+	        animation-delay: $i * 5s;
+        }
+      }
+    }
+  }
+
+  .hero-trailer {
+    background-color: #ff5300;
+  }
+}
+
+@keyframes blurFadeInOut {
+	0% {
+		opacity: 0;
+    color: #fff963;
+		/* text-shadow: 0px 0px 10px #fff963; */
+		transform: scale(2);
+	}
+	40%, 75% {
+		opacity: 1;
+    color: $font-color-blue;
+		text-shadow: 0px 0px 0px $font-color-blue;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+    color: #ff5300;
+		text-shadow: 0px 0px 10px #ff5300;
+		transform: scale(0);
+	}
+}
+
+@keyframes blurFadeIn {
+	0% {
+		opacity: 0;
+    color: #fff963;
+		text-shadow: 0px 0px 30px #fff963;
+		transform: scale(1.8);
+	}
+	40%, 100% {
+		opacity: 1;
+    color: $font-color-blue;
+		text-shadow: 0px 0px 0.1px $font-color-blue;
+		transform: scale(1);
+	}
+}
