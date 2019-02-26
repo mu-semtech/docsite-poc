@@ -2,6 +2,41 @@ $color-blue: #44bdff;
 $color-yellow: #fff963;
 $color-orange: #ff5300;
 
+/* collapsed panel */
+
+.hero-banner-top {
+  &, & .main-hero {
+    &, & h1 {
+      transition: all 2s ease-in-out;
+    }
+  }
+}
+
+.route__documentation {
+  .hero-banner-top {
+    .main-hero {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      max-width: 2000px;
+      height: 5em !important;
+
+      & > h1 {
+        margin-top: 0.20em;
+        & > span:nth-child(2) {
+          font-size: 0.75em;
+        }
+      }
+    }
+  }
+  .hero-trailer {
+    position: absolute;
+    top: 5em;
+  }
+}
+
+/* standard body elements */
 body {
   /* background-color: $color-yellow; // fff963ff */
   margin: 0;
@@ -26,9 +61,18 @@ body {
 
   .main-hero {
     height: 35em;
-    background-image: radial-gradient(farthest-side at 8em 4em, $color-yellow 0%, $color-orange 100%);
     position: relative;
     overflow: hidden;
+    z-index: 1;
+
+    .background {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      overflow: hidden;
+      min-width: 800px;
+      height: 35em;
+      background-image: radial-gradient(farthest-side at 8em 4em, $color-yellow 0%, $color-orange 100%);
+    }
 
     h1, .tagline {
       color: $color-blue;
@@ -41,6 +85,7 @@ body {
       font-size: 4.5em;
       top: 0em;
       left: 0; right: 0;
+      margin-top: 1em;
 
       & > span:nth-child(1){
         flex-grow: 20;
@@ -69,22 +114,23 @@ body {
         text-shadow: 0px 0px 1px $color-blue;
         opacity: 0;
 
-	      animation: blurFadeInOut 5s ease-in backwards;
+	      animation: blurFadeInOut 3s ease-in backwards;
       }
 
       & > span:nth-child(11){
-	      animation: blurFadeIn 5s ease-in backwards;
+	      animation: blurFadeIn 3s ease-in backwards;
       }
 
       @for $i from 0 through 10 {
         & > span:nth-child(#{$i + 1}) {
-	        animation-delay: $i * 5s;
+	        animation-delay: $i * 3s;
         }
       }
     }
   }
 
   .hero-trailer {
+    
     background-color: $color-orange;
   }
 }
@@ -92,11 +138,11 @@ body {
 @keyframes blurFadeInOut {
 	0% {
 		opacity: 0;
-    color: $color-yellow;
-		/* text-shadow: 0px 0px 10px $color-yellow; */
-		transform: scale(2);
+    color: $color-orange;
+		text-shadow: 0px 0px 10px $color-orange;
+		transform: scale(0);
 	}
-	40%, 75% {
+	40%, 80% {
 		opacity: 1;
     color: $color-blue;
 		text-shadow: 0px 0px 0px $color-blue;
@@ -104,18 +150,18 @@ body {
 	}
 	100% {
 		opacity: 0;
-    color: $color-orange;
-		text-shadow: 0px 0px 10px $color-orange;
-		transform: scale(0);
+    color: $color-yellow;
+		text-shadow: 0px 0px 20px $color-yellow;
+		transform: scale(2);
 	}
 }
 
 @keyframes blurFadeIn {
 	0% {
 		opacity: 0;
-    color: $color-yellow;
-		text-shadow: 0px 0px 30px $color-yellow;
-		transform: scale(1.8);
+    color: $color-orange;
+		text-shadow: 0px 0px 10px $color-orange;
+		transform: scale(0);
 	}
 	40%, 100% {
 		opacity: 1;

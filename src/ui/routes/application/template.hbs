@@ -1,6 +1,7 @@
 {{#with-route-css-classes}}
   <div class="hero-banner-top">
     <div class="main-hero">
+      <div class="background"></div>
       <h1>
         <span></span>
         <span>mu.semte.ch</span>
@@ -8,7 +9,7 @@
       </h1>
       <p class="tagline">
         <span>Semantic Microservices</span>
-        <span>Putting the fun in development</span>
+        <span>Joyous development</span>
         <span>Code reuse on steroids</span>
         <span>Software that lasts for years</span>
         <span>Built on W3C standards</span>
@@ -22,9 +23,8 @@
     </div>
 
     <p class="hero-trailer">
-      Here be trailing information
+      {{outlet}}
     </p>
   </div>
 
-  {{outlet}}
 {{/with-route-css-classes}}
