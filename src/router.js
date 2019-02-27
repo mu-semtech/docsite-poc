@@ -8,7 +8,11 @@ const Router = EmberRouter.extend( RouterScroll, {
 });
 
 Router.map(function() {
-  this.route('documentation');
+  this.route('documentation', function() {
+    this.route('core', function() {
+      this.route('mu-cl-resources');
+    });
+  });
 });
 
 export default Router;
