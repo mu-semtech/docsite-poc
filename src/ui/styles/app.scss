@@ -119,6 +119,7 @@ body {
 
       & > span:nth-child(11){
 	      animation: blurFadeIn 3s ease-in backwards;
+        animation-fill-mode: forwards;
       }
 
       @for $i from 0 through 10 {
