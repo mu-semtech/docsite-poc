@@ -12,7 +12,10 @@ Router.map(function() {
     this.route('core', function() {
       this.route('mu-cl-resources');
     });
-    this.route('templates');
+    this.route('templates', function() {
+      this.route('roll-your-own');
+      this.route('from-repository', { path: ":repository" });
+    });
   });
 });
 
