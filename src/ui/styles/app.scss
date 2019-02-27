@@ -49,7 +49,7 @@ html {
   }
 
   .after-header {
-    position: relative;
+    position: absolute;
     top: 5em;
     max-width: 2000px;
     margin: 0 auto;
@@ -61,19 +61,21 @@ html {
 
 .route__documentation[scrollpositiony="0"] {
   .hero-banner-top .main-hero {
-    box-shadow: $standard-box-shadow;
+    box-shadow: none;
   }
 }
 .route__documentation {
   .hero-banner-top .main-hero {
     box-shadow: $standard-box-shadow;
+    transition: box-shadow 0.2s ease-out;
   }
 }
 
 .after-header {
-  position: relative;
+  position: absolute;
   background-color: $color-orange;
   transition: all 2s ease-in-out;
+  top: 35em;
 
   z-index: 0;
 
@@ -232,6 +234,12 @@ body {
     color: inherit;
     text-decoration: underline;
   }
+
+  h1 a {
+    text-decoration: none;
+  }
+}
+
 .documentation-container {
   h1.page-title {
     font-weight: 900;
@@ -378,6 +386,50 @@ body {
         font-size: 1.2em;
       }
     }
+  }
+}
+
+// documentation menu
+.menu {
+  position: absolute;
+  background-color: $color-orange;
+  width: 15em;
+  min-height: 10em;
+  top: 0;
+
+  .submenu {
+    padding-left: 1em;
+    max-height: 0;
+    transition: max-height 0.5s ease-in-out;
+    overflow: hidden;
+  }
+
+  a {
+    transition: all 0.3s ease-in-out;
+    display: block;
+    margin: 1ex 0;
+    padding: 0 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Vollkorn', serif;
+    font-weight: 400;
+    color: white;
+
+    &:hover {
+      font-weight: 800;
+    }
+  }
+}
+
+.route__documentation_core {
+  .submenu.menu__core-microservices {
+    max-height: 300px;
+  }
+}
+
+.route__documentation_templates {
+  .submenu.menu__templates {
+    max-height: 300px;
   }
 }
 

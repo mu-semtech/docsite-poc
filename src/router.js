@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('core', function() {
       this.route('mu-cl-resources');
     });
+    this.route('templates');
   });
 });
 

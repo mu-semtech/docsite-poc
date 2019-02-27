@@ -1,3 +1,26 @@
-{{link-to 'BACK' 'index'}}
+<div class="menu">
+  {{link-to "general ideas" "documentation"}}
+  {{link-to "microservice templates" "documentation.templates"}}
+  <div class="submenu menu__templates">
+    {{link-to "mu-javascript-template" "documentation.templates"}}
+    {{link-to "mu-ruby-template" "documentation.templates"}}
+    {{link-to "mu-python-template" "documentation.templates"}}
+    {{link-to "write your own" "documentation.templates"}}
+  </div>
 
-{{outlet}}
+  {{link-to "core microservices" "documentation.core"}}
+  <div class="submenu menu__core-microservices">
+    {{link-to "mu-identifier" "documentation.core.mu-cl-resources"}}
+    {{link-to "mu-dispatcher" "documentation.core.mu-cl-resources"}}
+    {{link-to "mu-cl-resources" "documentation.core.mu-cl-resources"}}
+    {{link-to "mu-authorization" "documentation.core.mu-cl-resources"}}
+    {{link-to "virtuoso" "documentation.core.mu-cl-resources"}}
+  </div>
+  {{link-to "debugging howtos" "documentation"}}
+  {{link-to "semantic models" "documentation"}}
+  {{link-to "cookbooks" "documentation"}}
+</div>
+
+<div class="documentation-body">
+  {{outlet}}
+</div>
