@@ -232,6 +232,107 @@ body {
     color: inherit;
     text-decoration: underline;
   }
+.documentation-container {
+  h1.page-title {
+    font-weight: 900;
+  }
+
+  font-family: 'Vollkorn', sans-serif;
+  font-weight: 400;
+  color: #444;
+
+  @for $i from 1 through 7 {
+    h#{$i} {
+      color: $color-blue;
+      font-weight: bolder;
+      margin-left: -10px;
+      padding-left: 10px;
+    }
+
+  }
+
+  h1 {
+    font-size: 3em;
+    color: #333;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 2em;
+    color: #333;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 2em;
+    color: #333;
+    /* text-decoration: underline; */
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  h4 {
+    font-size: 1.8em;
+    color: #444;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  h5 {
+    font-size: 1.5em;
+    color: #444;
+    text-decoration: underline;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  h6 {
+    font-size: 1.5em;
+    color: #444;
+    text-decoration: underline;
+    font-weight: 400;
+  }
+
+  ul {
+    list-style-type: "-";
+
+    li {
+      margin-left: -2em;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  // heading counters
+  h1 {counter-reset: h2}
+  h2 {counter-reset: h3}
+  h3 {counter-reset: h4}
+  h4 {counter-reset: h5}
+  h5 {counter-reset: h6}
+
+  h2:before {counter-increment: h2; content: counter(h2) ". "}
+  h3:before {counter-increment: h3; content: counter(h2) "." counter(h3) ". "}
+  h4:before {counter-increment: h4; content: counter(h2) "." counter(h3) "." counter(h4) ". "}
+  h5:before {counter-increment: h5; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". "}
+  h6:before {counter-increment: h6; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". "}
+
+  h2.nocount:before, h3.nocount:before, h4.nocount:before, h5.nocount:before, h6.nocount:before { content: ""; counter-increment: none }
+
+  @for $i from 0 through 6 {
+    h#{$i}::before {
+      display: inline-block;
+      width: 3em;
+      text-align: right;
+      marging-right: -3em;
+      margin-left: -3em;
+      color: #bbb;
+      font-style: initial;
+    }
+  }
+}
+
 }
 
 // Standard formatting on index page
