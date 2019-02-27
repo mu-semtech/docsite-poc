@@ -1,6 +1,7 @@
 $color-blue: #44bdff;
 $color-yellow: #fff963;
 $color-orange: #ff5300;
+$dirty-background-color: #fafafa;
 
 html {
   scroll-behavior: smooth;
@@ -47,32 +48,42 @@ html {
   }
 
   .after-header {
-    position: absolute;
+    position: relative;
     top: 5em;
     max-width: 2000px;
     margin: 0 auto;
     width: 100%;
+    background-color: $dirty-background-color;
+    box-shadow: 0px 0px 0px rgb(100,100,100);
+  }
+}
+
+.route__documentation[scrollpositiony="0"] {
+  .hero-banner-top .main-hero {
+    box-shadow: 0px 0px 0px rgb(100,100,100);
+  }
+}
+.route__documentation {
+  .hero-banner-top .main-hero {
+    box-shadow: 1px 4px 4px rgb(100,100,100);
   }
 }
 
 .after-header {
-  position: absolute;
-  top: 35em;
+  position: relative;
   background-color: $color-orange;
   transition: all 2s ease-in-out;
 
-  margin-top: 0;
+  z-index: 0;
+
   max-width: 1280px;
   width: 100%;
-  left: 0; right: 0; margin: 0 auto;
+  left: 0; right: 0; margin: 3em auto;
   padding: 0;
 
-  z-index: 10;
   box-shadow: 1px 4px 4px rgb(100,100,100);
   min-height: 2em;
 }
-
-
 
 /* standard body elements */
 body {
@@ -80,13 +91,12 @@ body {
   margin: 0;
   padding: 0;
 
-  background-color: #fafafa;
+  background-color: $dirty-background-color;
 }
 
 .hero-banner-top {
   margin-top: 0;
   padding: 0;
-  z-index: 1;
 
   & > * {
     margin-top: 0;
@@ -101,8 +111,9 @@ body {
     height: 35em;
     position: relative;
     overflow: hidden;
-    z-index: 1;
     box-shadow: 1px 4px 4px rgb(100,100,100);
+
+    z-index: 100;
 
     .background {
       position: absolute;
@@ -205,4 +216,54 @@ body {
 		text-shadow: 0px 0px 0.1px $color-blue;
 		transform: scale(1);
 	}
+}
+
+
+// Standard formatting
+body {
+  font-family: 'Jura', sans-serif;
+
+  p {
+    font-size: 1.2em;
+  }
+}
+
+// Standard formatting on index page
+.route__index {
+  .after-header {
+    display: flex;
+    margin-bottom: 2em;
+
+    & > .content {
+      max-width: 40em;
+      flex-grow: 0;
+    }
+    & > .spacer-before { flex-grow: 20; }
+    & > .spacer-after { flex-grow: 80; }
+
+    & > .content {
+      h1 {
+        font-size: 3.5em;
+        font-weight: bold;
+        color: white;
+        font-family: 'Marck Script', cursive;
+      }
+
+      h2 {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: white;
+        font-family: 'Marck Script', cursive;
+      }
+
+      p {
+        font-family: 'Jura', sans-serif;
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+.footer {
+  min-height: 5em;
 }

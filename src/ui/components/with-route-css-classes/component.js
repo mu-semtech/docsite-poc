@@ -6,6 +6,22 @@ export default class WithRouteCssClassesComponent extends Component {
   @service router
 
   classNameBindings = ['currentRouteClasses']
+  attributeBindings = ['scrollPositionY']
+
+  scrollPositionY = 0
+
+  constructor(){
+    super(...arguments);
+    this.set('onScroll', () => this.set('scrollPositionY', window.scrollY));
+  }
+
+  didInsertElement() {
+    window.addEventListener( 'scroll', this.onScroll );
+  }
+
+  willDestroyElement() {
+    window.removeEventListener( 'scroll', this.onScroll );
+  }
 
   @computed('router.currentRouteName')
   get currentRouteClasses() {
