@@ -333,6 +333,16 @@ body {
   }
 }
 
+// readable-width
+
+.__readable-width {
+  display: flex;
+  max-width: 60em;
+  margin: 0 auto;
+
+  & > .start-spacer { flex-grow: 20; }
+  & > .content { max-width: 60em; width: 100%; padding: 0 1em 0 4em; flex-grow: 0; }
+  & > .end-spacer { flex-grow: 80; }
 }
 
 // Standard formatting on index page
