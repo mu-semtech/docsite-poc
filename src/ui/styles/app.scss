@@ -255,6 +255,8 @@ body {
       font-weight: bolder;
       margin-left: -10px;
       padding-left: 10px;
+      position: relative;
+      left: -4px;
     }
 
   }
@@ -305,7 +307,7 @@ body {
     list-style-type: "-";
 
     li {
-      margin-left: -2em;
+      margin-left: -1.75em;
 
       p {
         margin: 0;
@@ -337,6 +339,8 @@ body {
       margin-left: -3em;
       color: #bbb;
       font-style: initial;
+      position: relative;
+      right: 0.4ex;
     }
   }
 }
