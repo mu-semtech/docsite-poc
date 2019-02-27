@@ -2,12 +2,18 @@ $color-blue: #44bdff;
 $color-yellow: #fff963;
 $color-orange: #ff5300;
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* collapsed panel */
 
 .hero-banner-top {
   &, & .main-hero {
     &, & h1 {
-      transition: all 2s ease-in-out;
+      &, & * {
+        transition: all 2s ease-in-out;
+      }
     }
   }
 }
@@ -22,19 +28,51 @@ $color-orange: #ff5300;
       max-width: 2000px;
       height: 5em !important;
 
+      .background {
+        margin-top: -30em;
+      }
+
       & > h1 {
         margin-top: 0.20em;
         & > span:nth-child(2) {
           font-size: 0.75em;
+          /* color: $color-yellow; */
         }
+      }
+
+      .tagline {
+        margin-left: 100em;
       }
     }
   }
-  .hero-trailer {
+
+  .after-header {
     position: absolute;
     top: 5em;
+    max-width: 2000px;
+    margin: 0 auto;
+    width: 100%;
   }
 }
+
+.after-header {
+  position: absolute;
+  top: 35em;
+  background-color: $color-orange;
+  transition: all 2s ease-in-out;
+
+  margin-top: 0;
+  max-width: 1280px;
+  width: 100%;
+  left: 0; right: 0; margin: 0 auto;
+  padding: 0;
+
+  z-index: 10;
+  box-shadow: 1px 4px 4px rgb(100,100,100);
+  min-height: 2em;
+}
+
+
 
 /* standard body elements */
 body {
@@ -47,8 +85,8 @@ body {
 
 .hero-banner-top {
   margin-top: 0;
-  filter: drop-shadow( 0 0 0.2em );
   padding: 0;
+  z-index: 1;
 
   & > * {
     margin-top: 0;
@@ -64,6 +102,7 @@ body {
     position: relative;
     overflow: hidden;
     z-index: 1;
+    box-shadow: 1px 4px 4px rgb(100,100,100);
 
     .background {
       position: absolute;
@@ -71,6 +110,7 @@ body {
       overflow: hidden;
       min-width: 800px;
       height: 35em;
+      margin-top: 0;
       background-image: radial-gradient(farthest-side at 8em 4em, $color-yellow 0%, $color-orange 100%);
     }
 
@@ -128,11 +168,6 @@ body {
         }
       }
     }
-  }
-
-  .hero-trailer {
-    
-    background-color: $color-orange;
   }
 }
 
