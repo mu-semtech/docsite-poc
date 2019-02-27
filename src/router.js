@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('documentation', function() {
     this.route('core', function() {
       this.route('mu-cl-resources');
+      this.route('from-repository', { path: ":repository" });
     });
     this.route('templates', function() {
       this.route('roll-your-own');
