@@ -17,6 +17,7 @@ Router.map(function() {
       this.route('roll-your-own');
       this.route('from-repository', { path: ":repository" });
     });
+    this.route('under-construction', { path: ":key" });
   });
 });
 
